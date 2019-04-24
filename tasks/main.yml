@@ -5,3 +5,4 @@
     url: https://dl.gitea.io/gitea/1.3.2/gitea-1.3.2-linux-amd64
     dest: /usr/local/bin/gitea
     mode: 0555
+     

@@ -21,3 +21,7 @@ def test_gitea_file(host):
     assert f.user == 'root'
     assert f.group == 'root'
     assert f.mode == 0o555
+
+
+#def test_gitea_exec(host):
+    
