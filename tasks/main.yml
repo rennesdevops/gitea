@@ -5,4 +5,32 @@
     url: https://dl.gitea.io/gitea/1.3.2/gitea-1.3.2-linux-amd64
     dest: /usr/local/bin/gitea
     mode: 0555
-     
+
+- name: copy gitea service
+  copy:
+    src: gitea.service
+    dest: /etc/systemd/system/gitea.service
+    # owner: foo
+    # group: foo
+    mode: 0655
+
+- name: ensure gitea config dir exist
+  file:
+    path: /etc/gitea
+    state: directory
+    owner: root
+    group: root
+    mode: 0655
+
+- name: copy gitea config
+  copy:
+    src: app.ini
+    dest: /etc/gitea/app.ini
+    owner: root
+    group: root
+    mode: 0444
+
+- name: Ensure start and enable gitea
+  service:
+    name: gitea
+    state: started
