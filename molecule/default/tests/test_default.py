@@ -33,7 +33,10 @@ def test_gitea_exec(host):
     assert gitea.is_running
     assert gitea.is_enabled
 
-
+def test_git_is_installed(host):
+    gitpackage = host.package('git')
+    assert gitpackage.is_installed
+    
 def test_gitea_config_dir(host):
     f = host.file('/etc/gitea')
 

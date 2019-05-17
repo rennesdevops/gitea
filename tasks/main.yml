@@ -33,6 +33,11 @@
     group: root
     mode: 0655
 
+- name: ensure git is installed
+  apt:
+    name: git
+
+
 - name: copy gitea config
   copy:
     src: app.ini
