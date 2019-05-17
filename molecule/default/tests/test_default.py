@@ -25,6 +25,8 @@ def test_gitea_file(host):
 def test_git_group(host):
     assert host.group('git').exists    
 
+def test_git_user(host):
+    assert host.run('id git').rc == 0 
 
 def test_gitea_exec(host):
     gitea = host.service("gitea")
