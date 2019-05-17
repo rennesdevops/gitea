@@ -22,6 +22,9 @@ def test_gitea_file(host):
     assert f.group == 'root'
     assert f.mode == 0o555
 
+def test_git_group(host):
+    assert host.group('git').exists    
+
 
 def test_gitea_exec(host):
     gitea = host.service("gitea")

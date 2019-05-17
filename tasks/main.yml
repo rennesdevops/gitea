@@ -6,6 +6,11 @@
     dest: /usr/local/bin/gitea
     mode: 0555
 
+- name: Create group git
+  group:
+    name: git
+    state: present
+
 - name: copy gitea service
   copy:
     src: gitea.service
