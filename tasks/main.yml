@@ -31,7 +31,7 @@
     state: directory
     owner: root
     group: root
-    mode: 0655
+    mode: 0755
 
 - name: ensure git is installed
   apt:

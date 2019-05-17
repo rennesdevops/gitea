@@ -41,6 +41,7 @@ def test_gitea_config_dir(host):
     f = host.file('/etc/gitea')
 
     assert f.exists
+    assert f.is_directory
     assert f.user == 'root'
     assert f.group == 'root'
     assert f.mode == 0o755
