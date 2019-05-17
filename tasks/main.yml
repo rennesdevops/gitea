@@ -37,6 +37,13 @@
   apt:
     name: git
 
+- name: ensure gitea work dir exist
+  file:
+    path: /var/lib/gitea
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
 
 - name: copy gitea config
   copy:
