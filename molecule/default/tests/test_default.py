@@ -60,8 +60,8 @@ def test_gitea_work_dir(host):
 
     assert f.exists
     assert f.is_directory
-    assert f.user == 'root'
-    assert f.group == 'root'
+    assert f.user == 'git'
+    assert f.group == 'git'
     assert f.mode == 0o755
 
 def test_gitea_config(host):
@@ -71,3 +71,7 @@ def test_gitea_config(host):
     assert f.user == 'root'
     assert f.group == 'root'
     assert f.mode == 0o444
+
+def test_port_listen(host):
+    assert host.socket("tcp://0.0.0.0:3000").is_listening
+    

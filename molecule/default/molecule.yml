@@ -14,10 +14,14 @@ platforms:
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: True
+    published_ports:
+      - 3000:3000/tcp
 provisioner:
   name: ansible
   lint:
     name: ansible-lint
+  playbooks:
+    prepare: prepare.yml
 verifier:
   name: testinfra
   lint:

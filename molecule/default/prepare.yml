@@ -1,0 +1,7 @@
+---
+- name: Prepare
+  hosts: all
+  tasks:
+    - name: ensure ss is installed
+      apt:
+        name: net-tools

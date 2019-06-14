@@ -41,8 +41,8 @@
   file:
     path: /var/lib/gitea
     state: directory
-    owner: root
-    group: root
+    owner: git
+    group: git
     mode: 0755
 
 - name: copy gitea config
@@ -53,7 +53,16 @@
     group: root
     mode: 0444
 
+- name: ensure gitea gitea/custom dir exist
+  file:
+    path: /var/lib/gitea/custom
+    state: directory
+    owner: git
+    group: git
+    mode: 0755
+
 - name: Ensure start and enable gitea
   service:
     name: gitea
     state: started
+    enabled: yes 
