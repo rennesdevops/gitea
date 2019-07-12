@@ -65,4 +65,4 @@
   service:
     name: gitea
     state: started
-    enabled: yes 
+    enabled: yes

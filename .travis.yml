@@ -5,7 +5,7 @@ services:
   - docker
 
 script:
-- pip install molecule
-- pip install docker-py
-- molecule create
-- molecule converge
+  - pip install molecule
+  - pip install docker-py
+  - molecule create
+  - molecule converge

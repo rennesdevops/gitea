@@ -22,21 +22,26 @@ def test_gitea_file(host):
     assert f.group == 'root'
     assert f.mode == 0o555
 
+
 def test_git_group(host):
-    assert host.group('git').exists    
+    assert host.group('git').exists
+
 
 def test_git_user(host):
-    assert host.run('id git').rc == 0 
+    assert host.run('id git').rc == 0
+
 
 def test_gitea_exec(host):
     gitea = host.service("gitea")
     assert gitea.is_running
     assert gitea.is_enabled
 
+
 def test_git_is_installed(host):
     gitpackage = host.package('git')
     assert gitpackage.is_installed
-    
+
+
 def test_gitea_config_dir(host):
     f = host.file('/etc/gitea')
 
@@ -45,6 +50,7 @@ def test_gitea_config_dir(host):
     assert f.user == 'root'
     assert f.group == 'root'
     assert f.mode == 0o755
+
 
 def test_gitea_work_dir(host):
     f = host.file('/var/lib/gitea')
@@ -55,7 +61,8 @@ def test_gitea_work_dir(host):
     assert f.group == 'root'
     assert f.mode == 0o755
 
-def test_gitea_work_dir(host):
+
+def test_gitea_custom_dir(host):
     f = host.file('/var/lib/gitea/custom')
 
     assert f.exists
@@ -63,6 +70,7 @@ def test_gitea_work_dir(host):
     assert f.user == 'git'
     assert f.group == 'git'
     assert f.mode == 0o755
+
 
 def test_gitea_config(host):
     f = host.file('/etc/gitea/app.ini')
@@ -72,6 +80,6 @@ def test_gitea_config(host):
     assert f.group == 'root'
     assert f.mode == 0o444
 
+
 def test_port_listen(host):
     assert host.socket("tcp://0.0.0.0:3000").is_listening
-    
