@@ -57,8 +57,8 @@ def test_gitea_work_dir(host):
 
     assert f.exists
     assert f.is_directory
-    assert f.user == 'root'
-    assert f.group == 'root'
+    assert f.user == 'git'
+    assert f.group == 'git'
     assert f.mode == 0o755
 
 
