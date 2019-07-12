@@ -6,3 +6,4 @@ services:
 
 script:
 - pip install molecule
+- exit 1
