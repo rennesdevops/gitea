@@ -8,3 +8,4 @@ script:
 - pip install molecule
 - pip install docker-py
 - molecule create
+- molecule converge
