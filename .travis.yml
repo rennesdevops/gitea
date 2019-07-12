@@ -5,4 +5,4 @@ services:
   - docker
 
 script:
-- echo 'hello'
+- pip install molecule
