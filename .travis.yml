@@ -6,4 +6,4 @@ services:
 
 script:
 - pip install molecule
-- exit 1
+- pip install docker-py
