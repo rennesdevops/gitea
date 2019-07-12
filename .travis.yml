@@ -7,5 +7,7 @@ services:
 script:
   - pip install molecule
   - pip install docker-py
+  - molecule lint
   - molecule create
   - molecule converge
+  - molecule verify
