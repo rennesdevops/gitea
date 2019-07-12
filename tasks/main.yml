@@ -34,7 +34,7 @@
     mode: 0755
 
 - name: ensure git is installed
-  apt:
+  package:
     name: git
 
 - name: ensure gitea work dir exist

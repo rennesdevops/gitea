@@ -3,5 +3,5 @@
   hosts: all
   tasks:
     - name: ensure ss is installed
-      apt:
+      package:
         name: net-tools
