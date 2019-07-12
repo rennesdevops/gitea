@@ -12,4 +12,3 @@ script:
   - molecule create
   - molecule converge
   - molecule verify
-.
