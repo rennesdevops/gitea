@@ -6,7 +6,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: instance
+  - name: instance-ubuntu
     image: solita/ubuntu-systemd:bionic
     command: /sbin/init
     capabilities:
@@ -16,6 +16,14 @@ platforms:
     privileged: True
     published_ports:
       - 3000:3000/tcp
+  - name: instance-centos
+    image: ebesson/docker-centos7-systemd
+    command: /sbin/init
+    capabilities:
+      - SYS_ADMIN
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: True
 provisioner:
   name: ansible
   lint:
