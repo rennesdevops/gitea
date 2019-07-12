@@ -6,7 +6,7 @@ services:
 
 script:
   - pip install molecule
-  - pip install testinfra==3.0.4 
+  - pip install testinfra==3.0.4
   - pip install docker-py
   - molecule lint
   - molecule create
